@@ -11,7 +11,11 @@
 <img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/ABCircularProgressView/interface-builder.png" width="400">
 
 ```swift
+//define it
 @IBOutlet weak var progressView: ABCircularProgressView!
+
+//use it
+progressView.progress = CGFloat(downloadProgress)
 ```
 
 ## Properties

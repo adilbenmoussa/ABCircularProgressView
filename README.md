@@ -4,11 +4,11 @@
 
 
 #### `ABCircularProgressView` an example in one of my apps. [link](https://itunes.apple.com/en/app/id994829561):
-<img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/ABCircularProgressView/screenshot.png" width="400">
+<img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/screenshot.png" width="400">
 
 `ABCircularProgressView` inherits from UIView, so you can just use it as a normal view in the `Interface builder`
 
-<img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/ABCircularProgressView/interface-builder.png" width="400">
+<img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/interface-builder.png" width="400">
 
 ```swift
 //define it
@@ -33,7 +33,7 @@ The Opacity of the progress background layer
 The width of the line used to draw the progress view.
 
 ## Playgroud example
-<img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/ABCircularProgressView/playground.png" width="600">
+<img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/playground.png" width="600">
 
 ```swift
 // Test the ABCircularProgressView component

@@ -32,10 +32,28 @@ The Opacity of the progress background layer
 ####lineWidth: `CGFloat`
 The width of the line used to draw the progress view.
 
+## Playgroud example
+<img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/ABCircularProgressView/playground.png" width="600">
 
-##To-Do
-- [] Example project
-- [] Cocoapods Support
+```swift
+// Test the ABCircularProgressView component
+let progressIndicatorView = ABCircularProgressView(frame: CGRect(x: 0.0, y: 0.0, width: 600.0, height: 600.0))
+var progress: CGFloat = 0
+for i in 0..<101 {
+    progress = CGFloat(Float(i) / 100.0)
+    progressIndicatorView.progress = progress
+}
+```
+
+##ToDo list
+- [x] Playground example
+- [] Project example
+- [] Add spin progress
+- [] Cocoapods support
+
+##Contact
+Mail me at [adil.benmoussa@gmal.com](adil.benmoussa@gmal.com)
+
 
 ##License
 

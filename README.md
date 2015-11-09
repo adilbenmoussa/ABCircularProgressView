@@ -4,11 +4,11 @@
 
 
 #### `ABCircularProgressView` an example in one of my apps. [link](https://itunes.apple.com/en/app/id994829561):
-[![Screenshot](https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/screenshot.png)]
+![Screenshot](https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/ABCircularProgressView/screenshot.png)
 
 `ABCircularProgressView` inherits from UIView, so you can just use it as a normal view in the `Interface builder`
 
-[![Screenshot](https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/interface-builder.png)]
+![Screenshot](https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/ABCircularProgressView/interface-builder.png)
 
 ```swift
 @IBOutlet weak var progressView: ABCircularProgressView!

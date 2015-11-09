@@ -3,7 +3,12 @@
 `ABCircularProgressView` is a simple circular progress view written in Swift 2, it draws the circular progress and a stop button (App store look like)
 
 
-#### `ABCircularProgressView` an example in one of my apps. [link](https://itunes.apple.com/en/app/id994829561):
+#### `ABCircularProgressView` screenshots:
+<img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/screenshot1.png" width="400">
+
+
+An example in one of my apps. [link](https://itunes.apple.com/en/app/id994829561):
+
 <img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/screenshot.png" width="400">
 
 `ABCircularProgressView` inherits from UIView, so you can just use it as a normal view in the `Interface builder`
@@ -37,17 +42,17 @@ The width of the line used to draw the progress view.
 
 ```swift
 // Test the ABCircularProgressView component
-let progressIndicatorView = ABCircularProgressView(frame: CGRect(x: 0.0, y: 0.0, width: 600.0, height: 600.0))
+let progressView = ABCircularProgressView(frame: CGRect(x: 0.0, y: 0.0, width: 600.0, height: 600.0))
 var progress: CGFloat = 0
 for i in 0..<101 {
     progress = CGFloat(Float(i) / 100.0)
-    progressIndicatorView.progress = progress
+    progressView = progress
 }
 ```
 
 ##ToDo list
 - [x] Playground example
-- [] Project example
+- [x] Project example
 - [] Add spin progress
 - [] Cocoapods support
 

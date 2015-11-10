@@ -25,17 +25,20 @@ progressView.progress = CGFloat(downloadProgress)
 
 ## Properties
 
+####progress: `CGFloat `
+The the progress value. Between 0 and 100. Change its value in order to change the visual progress of the component. Default is `0`.
+
 ####tintCGColor: `CGColor`
-The color of the progress view and the stop icon.
+The color of the progress view and the stop icon. Default is `UIColor.blueColor().CGColor`.
 
 ####stopSizeRatio: `CGFloat`
- Size ratio of the stop button related to the progress view, default 1/3 of the progress view
+ Size ratio of the stop button related to the progress view, default 1/3 of the progress view. Default is `0.3`.
 
 ####progressBackgroundOpacity: `Float`
-The Opacity of the progress background layer
+The Opacity of the progress background layer. Default is `0.1`.
 
 ####lineWidth: `CGFloat`
-The width of the line used to draw the progress view.
+The width of the line used to draw the progress view. Default is `1.0`.
 
 ## Playgroud example
 <img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/playground.png" width="600">
@@ -59,6 +62,9 @@ for i in 0..<101 {
 ##Contact
 Mail me at [adil.benmoussa@gmal.com](adil.benmoussa@gmal.com)
 
+##Requirements
+- iOS 7.0
+- Xcode 7, Swift 2.0
 
 ##License
 

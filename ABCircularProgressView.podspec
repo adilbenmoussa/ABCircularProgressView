@@ -10,6 +10,6 @@ s.author             = { 'Adil Ben Moussa' => 'adil.benmoussa@gmail.com' }
 s.social_media_url   = 'http://twitter.com/adilbenmoussa'
 s.platform     = :ios
 s.ios.deployment_target = '8.0'
-s.source       = { :git => 'https://github.com/adilbenmoussa/ABCircularProgressView.git', :tag => '#{s.version}' }
+s.source       = { :git => 'https://github.com/adilbenmoussa/ABCircularProgressView.git', :tag => s.version }
 s.source_files  = 'ABCircularProgressView/*.swift'
 end

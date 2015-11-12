@@ -37,7 +37,7 @@ class ABCircularProgressView: UIView {
      */
     let lineWidth: CGFloat = 1.0
     
-    //define the chape layers
+    //define the shape layers
     private let progressBackgroundLayer = CAShapeLayer()
     private let circlePathLayer = CAShapeLayer()
     private let iconLayer = CAShapeLayer()

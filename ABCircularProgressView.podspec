@@ -1,3 +1,4 @@
+use_frameworks!
 
 Pod::Spec.new do |s|
 s.name         = 'ABCircularProgressView'

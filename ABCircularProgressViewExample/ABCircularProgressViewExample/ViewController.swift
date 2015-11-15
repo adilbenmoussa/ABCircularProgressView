@@ -24,11 +24,19 @@ class ViewController: UIViewController {
 
     @IBAction func start(sender: AnyObject) {
         // Test the ABCircularProgressView component
-        var progress: CGFloat = 0
-        for i in 0..<101 {
-            progress = CGFloat(Float(i) / 100.0)
-            progressIndicatorView.progress = progress
+        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, 0);
+        let dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
+        dispatch_after(dispatchTime, dispatchQueue) { () -> Void in
+            var progress: CGFloat = 0
+            for i in 0..<101 {
+                progress = CGFloat(Float(i) / 100.0)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.progressIndicatorView.progress = progress
+                })
+                usleep(10000)
+            }
         }
+
     }
 
     @IBAction func changeProgress(sender: UISlider) {

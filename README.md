@@ -15,12 +15,25 @@ An example in one of my apps. [link](https://itunes.apple.com/en/app/id994829561
 
 <img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/interface-builder.png" width="400">
 
+## Usage
+
 ```swift
 //define it
 @IBOutlet weak var progressView: ABCircularProgressView!
 
-//use it
-progressView.progress = CGFloat(downloadProgress)
+//use it in the main thread
+var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, (Int64)(2 * NSEC_PER_SEC));
+let dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
+dispatch_after(dispatchTime, dispatchQueue) { () -> Void in
+    var progress: CGFloat = 0
+    for i in 0..<101 {
+        progress = CGFloat(Float(i) / 100.0)
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self. progressView.progress = progress
+        })
+        usleep(10000)
+    }
+ }
 ```
 
 ## Properties
@@ -42,16 +55,6 @@ The width of the line used to draw the progress view. Default is `1.0`.
 
 ## Playgroud example
 <img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/playground.png" width="600">
-
-```swift
-// Test the ABCircularProgressView component
-let progressView = ABCircularProgressView(frame: CGRect(x: 0.0, y: 0.0, width: 600.0, height: 600.0))
-var progress: CGFloat = 0
-for i in 0..<101 {
-    progress = CGFloat(Float(i) / 100.0)
-    progressView = progress
-}
-```
 
 ##ToDo list
 - [x] Playground example

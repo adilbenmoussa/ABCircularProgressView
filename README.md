@@ -22,7 +22,7 @@ An example in one of my apps. [link](https://itunes.apple.com/en/app/id994829561
 @IBOutlet weak var progressView: ABCircularProgressView!
 
 //use it in the main thread
-var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, (Int64)(2 * NSEC_PER_SEC));
+var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, 0);
 let dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
 dispatch_after(dispatchTime, dispatchQueue) { () -> Void in
     var progress: CGFloat = 0

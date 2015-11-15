@@ -21,19 +21,22 @@ An example in one of my apps. [link](https://itunes.apple.com/en/app/id994829561
 //define it
 @IBOutlet weak var progressView: ABCircularProgressView!
 
+//start the spinning
+progressIndicatorView.startSpinning()
+
 //use it in the main thread
-var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, 0);
+let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC));
 let dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
 dispatch_after(dispatchTime, dispatchQueue) { () -> Void in
     var progress: CGFloat = 0
     for i in 0..<101 {
         progress = CGFloat(Float(i) / 100.0)
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self. progressView.progress = progress
+            self.progressIndicatorView.progress = progress
         })
         usleep(10000)
     }
- }
+}
 ```
 
 ## Properties
@@ -53,13 +56,39 @@ The Opacity of the progress background layer. Default is `0.1`.
 ####lineWidth: `CGFloat`
 The width of the line used to draw the progress view. Default is `1.0`.
 
+## Methods
+```swift 
+override public init(frame: CGRect)
+```
+Initialize with a frame. Please only use square frames.
+
+```swift 
+override func layoutSubviews
+```
+Draws the view when called.
+
+```swift
+public func startSpinning()
+```
+Start the progress view spin animation.
+
+```swift 
+public func stopSpinning()
+```
+Stop the progress view spin animation., if any.
+
+```swift 
+public func isSpinning() -> Bool
+```
+Check if the progress view spin animation is active.
+
 ## Playgroud example
 <img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/playground.png" width="600">
 
 ##ToDo list
 - [x] Playground example
 - [x] Project example
-- [] Add spin progress
+- [x] Add spin progress
 - [] Cocoapods support
 
 ##Contact
@@ -68,6 +97,9 @@ Mail me at [adil.benmoussa@gmal.com](adil.benmoussa@gmal.com)
 ##Requirements
 - iOS 7.0
 - Xcode 7, Swift 2.0
+
+##Acknowledgments
+The stopSpinning and stopSpinning implementation was adapted from [here](https://github.com/elbryan/FFCircularProgressView)
 
 ##License
 

@@ -36,6 +36,7 @@ class ABCircularProgressView: UIView {
     private let progressBackgroundLayer = CAShapeLayer()
     private let circlePathLayer = CAShapeLayer()
     private let iconLayer = CAShapeLayer()
+    private var _isSpinning = false
     
     var progress: CGFloat {
         get {
@@ -44,11 +45,12 @@ class ABCircularProgressView: UIView {
         set {
             if (newValue > 1) {
                 circlePathLayer.strokeEnd = 1
-            } else if (newValue < 0) {
+            } else if (newValue <= 0) {
                 circlePathLayer.strokeEnd = 0
                 clearStopIcon()
             } else {
                 circlePathLayer.strokeEnd = newValue
+                stopSpinning()
                 drawStopIcon()
             }
         }
@@ -121,9 +123,9 @@ class ABCircularProgressView: UIView {
         iconLayer.path = nil
     }
     
-    private  func backgroundCirclePath() -> UIBezierPath{
+    private  func backgroundCirclePath(partial: Bool=false) -> UIBezierPath{
         let startAngle: CGFloat = -(CGFloat)(M_PI / 2); // 90 degrees
-        let endAngle: CGFloat = CGFloat(2 * M_PI) + startAngle
+        var endAngle: CGFloat = CGFloat(2 * M_PI) + startAngle
         let center: CGPoint = CGPointMake(bounds.size.width/2, bounds.size.height/2)
         let radius: CGFloat = (bounds.size.width - lineWidth)/2
         
@@ -131,6 +133,14 @@ class ABCircularProgressView: UIView {
         let processBackgroundPath: UIBezierPath = UIBezierPath()
         processBackgroundPath.lineWidth = lineWidth
         processBackgroundPath.lineCapStyle  = CGLineCap.Round
+        if (partial) {
+            endAngle = (1.8 * CGFloat(M_PI)) + startAngle;
+            progressBackgroundLayer.opacity = progressBackgroundOpacity + 0.1
+        }
+        else{
+            progressBackgroundLayer.opacity = progressBackgroundOpacity
+        }
+
         processBackgroundPath.addArcWithCenter(center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         
         return processBackgroundPath
@@ -140,5 +150,29 @@ class ABCircularProgressView: UIView {
         super.layoutSubviews()
         progressBackgroundLayer.path = backgroundCirclePath().CGPath
         circlePathLayer.path = circlePath().CGPath
+    }
+    
+    func startSpinning() {
+        _isSpinning = true
+        progressBackgroundLayer.path = backgroundCirclePath(true).CGPath
+        
+        let rotationAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation.toValue = M_PI * 2.0
+        rotationAnimation.duration = 1
+        rotationAnimation.cumulative = true
+        rotationAnimation.repeatCount = Float.infinity;
+        
+        progressBackgroundLayer.addAnimation(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
+    func stopSpinning(){
+        progressBackgroundLayer.path = backgroundCirclePath(false).CGPath
+        progressBackgroundLayer.removeAllAnimations()
+        _isSpinning = false
+    }
+    
+    func isSpinning()->Bool {
+        return _isSpinning
+        
     }
 }

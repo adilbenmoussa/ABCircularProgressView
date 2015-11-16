@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name         = 'ABCircularProgressView'
 s.version      = '1.0'
-s.summary      = 'ABCircularProgressView is a simple circular progress view written in Swift 2, it draws the circular progress and a stop button (App store look like).'
+s.summary      = 'ABCircularProgressView is a simple circular progress view written in Swift 2.'
 s.homepage     = 'https://github.com/adilbenmoussa/ABCircularProgressView'
 s.screenshots  = 'https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/screenshot1.png', 'https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/screenshot.png'
 s.license      = 'MIT'

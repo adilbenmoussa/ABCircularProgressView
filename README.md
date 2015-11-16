@@ -1,9 +1,11 @@
+  <img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/swift-logo.jpg" width="400">
+  
 # ABCircularProgressView
 
 `ABCircularProgressView` is a simple circular progress view written in Swift 2, it draws the circular progress and a stop button (App store look like)
 
 
-#### `ABCircularProgressView` screenshots:
+#### Screenshots:
 <img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/screenshot1.png" width="400">
 
 
@@ -85,11 +87,25 @@ Check if the progress view spin animation is active.
 ## Playgroud example
 <img src="https://raw.githubusercontent.com/adilbenmoussa/ABCircularProgressView/master/Images/playground.png" width="600">
 
+## Installation
+
+###[CocoaPods](http://cocoapods.org)
+
+Simply add the following lines to your `Podfile`:
+```ruby
+# required by Cocoapods 0.36.0.rc.1 for Swift Pods
+use_frameworks! 
+
+pod 'ABCircularProgressView', '~> 1.0'
+```
+
+*(CocoaPods v0.36 or later required. See [this blog post](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) for details.)*
+
 ##ToDo list
 - [x] Playground example
 - [x] Project example
 - [x] Add spin progress
-- [] Cocoapods support
+- [x] Cocoapods support
 
 ##Contact
 Mail me at [adil.benmoussa@gmal.com](adil.benmoussa@gmal.com)

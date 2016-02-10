@@ -93,7 +93,7 @@ Check if the progress view spin animation is active.
 
 Simply add the following lines to your `Podfile`:
 ```ruby
-# required by Cocoapods 0.36.0.rc.1 for Swift Pods
+# required by CocoaPods 0.36.0.rc.1 for Swift Pods
 use_frameworks! 
 
 pod 'ABCircularProgressView', '~> 1.0'
@@ -105,7 +105,7 @@ pod 'ABCircularProgressView', '~> 1.0'
 - [x] Playground example
 - [x] Project example
 - [x] Add spin progress
-- [x] Cocoapods support
+- [x] CocoaPods support
 
 ##Contact
 Mail me at [adil.benmoussa@gmal.com](adil.benmoussa@gmal.com)
